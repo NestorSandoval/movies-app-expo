@@ -24,24 +24,20 @@ const HomeScreen = () => {
           Las mejores peliculas
         </Text>
 
-        {/* Carousel de imagenes */}
         <MainSlideshow movies={nowPlayingQuery.data ?? []} />
 
-        {/* Popular */}
         <MoviesHorizontalList
           className="mb-5"
           title="Populares"
           movies={popularQuery.data ?? []}
         />
 
-        {/* Top Rated */}
         <MoviesHorizontalList
           className="mb-5"
           title="Mejor calificadas"
           movies={topRatedQuery.data ?? []}
         />
 
-        {/* Proximamente */}
         <MoviesHorizontalList
           className="mb-5"
           title="Proximamente"
