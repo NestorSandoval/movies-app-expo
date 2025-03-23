@@ -1,10 +1,7 @@
 import { View, Text, ScrollView } from "react-native";
 import React from "react";
 
-import { useMovies } from "@/presentation/hooks/useMovies";
 const AboutHome = () => {
-  const { detailQuery } = useMovies();
-
   return (
     <ScrollView>
       <View>

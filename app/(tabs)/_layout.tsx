@@ -1,7 +1,9 @@
-import { Tabs } from "expo-router";
+import { Tabs, useLocalSearchParams } from "expo-router";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 export default function TabLayout() {
+  const { id } = useLocalSearchParams();
+
   return (
     <Tabs
       screenOptions={{
@@ -21,6 +23,7 @@ export default function TabLayout() {
           ),
         }}
       />
+
       <Tabs.Screen
         name="about/index"
         options={{
@@ -30,6 +33,34 @@ export default function TabLayout() {
               name={
                 focused ? "information-circle" : "information-circle-outline"
               }
+              color={color}
+              size={24}
+            />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="maps/index"
+        options={{
+          title: "Mapa",
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? "map-sharp" : "map-outline"}
+              color={color}
+              size={24}
+            />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="movie/[id]"
+        options={{
+          title: `Pelicula - ${id}`,
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? "videocam" : "videocam-outline"}
               color={color}
               size={24}
             />
